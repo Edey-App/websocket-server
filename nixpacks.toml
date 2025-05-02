@@ -1,16 +1,47 @@
 [phases.setup]
-nixPkgs = ['openssl', 'nodejs', 'php81', 'php81Packages.composer']
+nixPkgs = [
+  "php81",
+  "php81Extensions.pdo",
+  "php81Extensions.pdo_mysql",
+  "php81Extensions.redis",
+  "php81Extensions.mbstring",
+  "php81Extensions.exif",
+  "php81Extensions.bcmath",
+  "php81Extensions.gd",
+  "php81Extensions.intl",
+  "php81Extensions.curl",
+  "php81Extensions.opcache",
+  "php81Extensions.xml",
+  "php81Extensions.zip",
+  "php81Extensions.sodium",
+  "nodejs-18_x",
+  "yarn",
+  "nginx"
+]
 
 [phases.install]
-cmds = ['composer install --no-dev --optimize-autoloader']
+cmds = [
+  "composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev",
+  "yarn install",
+  "yarn build"
+]
 
 [phases.build]
 cmds = [
-  'php artisan config:cache',
-  'php artisan route:cache',
-  'php artisan view:cache',
-  'npm ci && npm run build'  # If using frontend assets
+  "mkdir -p storage/logs",
+  "mkdir -p storage/framework/{sessions,views,cache}",
+  "php artisan package:discover",
+  "php artisan config:cache",
+  "php artisan route:cache",
+  "php artisan view:cache",
+  "php artisan optimize",
+  "chmod -R 777 storage bootstrap/cache"
 ]
 
 [start]
-cmd = 'php artisan websockets:serve --host=0.0.0.0 --port=${PORT:-6001}'
+cmd = "php artisan serve --host=0.0.0.0 --port=${PORT:-8000}"
+
+[nginx]
+root = "public"
+location_override."/" = "try_files $uri $uri/ /index.php?$query_string;"
+location_override."~ \.php$" = "include fastcgi_params; fastcgi_param REQUEST_METHOD $request_method; fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name; fastcgi_pass 127.0.0.1:9000;"
