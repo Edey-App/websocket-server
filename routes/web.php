@@ -32,3 +32,8 @@ Route::post('/send-websocket-message', function (\Illuminate\Http\Request $reque
     event(new TestMessage($request->message));
     return ['success' => true];
 });
+
+
+Route::get('/health', function () {
+    return response()->json(['status' => 'ok']);
+});
