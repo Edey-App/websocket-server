@@ -22,21 +22,10 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // $this->registerPolicies();
+        $this->registerPolicies();
 
-        // Gate::define('viewWebSocketsDashboard', function ($user = null) {
-            
-        //     // return false;
-
-        //     if (config('app.env' ) == 'local') {
-        //         return true;
-        //     } 
-
-
-        //     return in_array($user?->email, [
-        //         'ngozi.stephen@example.com',
-        //         'admin.websocketserver@host.com'
-        //     ]);
-        // });
+        Gate::define('viewWebSocketsDashboard', function ($user) {
+            return $user->is_admin; // Customize based on your user model
+        });
     }
 }
