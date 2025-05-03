@@ -1,3 +1,0 @@
-websocket.inhouse.codes {
-    reverse_proxy /app/* 127.0.0.1:6001
-}
