@@ -1,10 +1,13 @@
 [phases.setup]
 nixpkgsArchive = "23.05"
+cmds = [
+  "cp .env.example .env || echo 'No .env.example found'"
+]
 
 [phases.install]
 cmds = [
   "apt-get update",
-  "apt-get install -y supervisor",
+  "apt-get install -y supervisor nginx php-fpm",
   "composer install --no-dev --optimize-autoloader",
   "npm ci",
   "npm run build",
@@ -19,6 +22,10 @@ cmds = [
 
 [phases.build]
 cmds = [
+  "echo 'Setting up Nginx configuration...'",
+  "rm -f /etc/nginx/sites-enabled/default",
+  "echo 'server { listen 80; root /app/public; index index.php; location / { try_files $uri $uri/ /index.php?$query_string; } location ~ \\.php$ { include snippets/fastcgi-php.conf; fastcgi_pass unix:/var/run/php/php-fpm.sock; } }' > /etc/nginx/sites-available/laravel.conf",
+  "ln -s /etc/nginx/sites-available/laravel.conf /etc/nginx/sites-enabled/",
   "echo 'Build phase complete'"
 ]
 
