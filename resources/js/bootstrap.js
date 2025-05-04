@@ -26,7 +26,7 @@ window.Echo = new Echo({
     cluster: import.meta.env.VITE_PUSHER_APP_CLUSTER,
     wsHost: import.meta.env.VITE_PUSHER_HOST || window.location.hostname,
     wsPort: import.meta.env.VITE_PUSHER_PORT || 443,
-    wssPort: import.meta.env.VITE_PUSHER_PORT || 443,
+    wssPort: import.meta.env.VITE_PUSHER_PORT || 6001,
     forceTLS: (import.meta.env.VITE_PUSHER_SCHEME || 'https') === 'https',
     enabledTransports: ['ws', 'wss'],
     path: import.meta.env.VITE_PUSHER_PATH || '/laravel-websockets',
