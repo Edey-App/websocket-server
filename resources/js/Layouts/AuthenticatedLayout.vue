@@ -32,7 +32,7 @@ const showingNavigationDropdown = ref(false);
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </NavLink>
-                                <a href="/laravel-websockets" class="text-gray-500 hover:text-gray-700">
+                                <a href="/laravel-websockets" class="text-gray-500 hover:text-gray-700 mt-[25px]">
                                     WebSockets Dashboard
                                 </a>
                             </div>
