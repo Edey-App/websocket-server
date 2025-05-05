@@ -42,7 +42,7 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['web', 'auth', 'can:viewWebSocketsDashboard']) // or 'can:viewWebSocketsDashboard'
     ->prefix('laravel-websockets')
     ->group(function () {
-        Route::get('/', ShowDashboard::class);
+        Route::get('/', ShowDashboard::class)->name('laravel-websockets');
     });
 
 require __DIR__.'/auth.php';
