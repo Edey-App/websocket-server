@@ -29,7 +29,7 @@ window.Echo = new Echo({
     wssPort: import.meta.env.VITE_PUSHER_PORT || 443,
     forceTLS: true,
     enabledTransports: ['ws', 'wss'],
-    path: import.meta.env.VITE_PUSHER_PATH || '/laravel-websockets',
+    // path: import.meta.env.VITE_PUSHER_PATH || '/laravel-websockets',
 });
 
 
