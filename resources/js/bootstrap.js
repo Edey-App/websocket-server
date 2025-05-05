@@ -30,6 +30,7 @@ window.Echo = new Echo({
     forceTLS: true,
     enabledTransports: ['ws', 'wss'],
     path: import.meta.env.VITE_PUSHER_PATH || '/laravel-websockets',
+    authEndpoint: '/broadcasting/auth',
 });
 
 
