@@ -36,10 +36,15 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::middleware(['web', 'auth', 'can:viewWebSocketsDashboard']) // or 'can:viewWebSocketsDashboard'
+Route::middleware(['web',]) // or 'can:viewWebSocketsDashboard'
     ->prefix('laravel-websockets')
     ->group(function () {
         Route::get('/', ShowDashboard::class);
     });
+// Route::middleware(['web', 'auth', 'can:viewWebSocketsDashboard']) // or 'can:viewWebSocketsDashboard'
+//     ->prefix('laravel-websockets')
+//     ->group(function () {
+//         Route::get('/', ShowDashboard::class);
+//     });
 
 require __DIR__.'/auth.php';

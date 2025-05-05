@@ -22,10 +22,10 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->registerPolicies();
+        // $this->registerPolicies();
 
-        Gate::define('viewWebSocketsDashboard', function ($user) {
-            return $user->is_admin; // Customize based on your user model
-        });
+        // Gate::define('viewWebSocketsDashboard', function ($user) {
+        //     return $user->is_admin; // Customize based on your user model
+        // });
     }
 }
