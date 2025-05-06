@@ -21,30 +21,43 @@
         * Optionally you can disable client events so clients cannot send
         * messages to each other via the webSockets.
         */
+        // 'apps' => [
+        //     [
+        //         'id' => env('PUSHER_APP_ID'),
+        //         'name' => env('APP_NAME'),
+        //         'key' => env('PUSHER_APP_KEY'),
+        //         'secret' => env('PUSHER_APP_SECRET'),
+        //         'path' => '',
+        //         // 'path' => env('PUSHER_APP_PATH', '/app'),
+        //         'capacity' => null,
+        //         'enable_client_messages' => false,
+        //         'enable_statistics' => true,
+        //     ],
+
+        //     // Add additional applications as needed
+        //     // [
+        //     //     'id' => 'project-1',
+        //     //     'name' => 'Project 1',
+        //     //     'key' => 'project-1-key',
+        //     //     'secret' => 'project-1-secret',
+        //     //     'path' => null,
+        //     //     'capacity' => null,
+        //     //     'enable_client_messages' => false,
+        //     //     'enable_statistics' => true,
+        //     // ],
+        // ],
+
         'apps' => [
             [
-                'id' => env('PUSHER_APP_ID'),
-                'name' => env('APP_NAME'),
-                'key' => env('PUSHER_APP_KEY'),
-                'secret' => env('PUSHER_APP_SECRET'),
+                'id' => 'app-9843a2c1-bd3f-4d29-8a6f-2f5e9ab123877',
+                'name' => 'MyApp',
+                'key' => 'pk_7b839c4d9e234f9ab8d4f21c68d0ef94',
+                'secret' => 'sk_1fc27c9baf954f208dfe9eae21373b8d',
                 'path' => '',
-                // 'path' => env('PUSHER_APP_PATH', '/app'),
                 'capacity' => null,
                 'enable_client_messages' => false,
                 'enable_statistics' => true,
             ],
-
-            // Add additional applications as needed
-            // [
-            //     'id' => 'project-1',
-            //     'name' => 'Project 1',
-            //     'key' => 'project-1-key',
-            //     'secret' => 'project-1-secret',
-            //     'path' => null,
-            //     'capacity' => null,
-            //     'enable_client_messages' => false,
-            //     'enable_statistics' => true,
-            // ],
         ],
 
         /*
