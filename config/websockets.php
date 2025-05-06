@@ -58,7 +58,7 @@
                 'enable_client_messages' => false,
                 'enable_statistics' => true,
             ],
-        
+        ],
 
         /*
         * This class is responsible for finding the apps. The default provider
