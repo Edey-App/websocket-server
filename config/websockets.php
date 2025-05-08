@@ -53,7 +53,7 @@
                 'name' => 'testingit',
                 'key' => 'pk_7b839c4d9e234f9ab8d4f21c68d0ef94',
                 'secret' => 'sk_1fc27c9baf954f208dfe9eae21373b8d',
-                'path' => '',
+                'path' => '/',
                 'enable_client_messages' => false,
                 'enable_statistics' => true,
             ],
