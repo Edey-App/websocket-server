@@ -49,10 +49,10 @@
 
         'apps' => [
             [
-                'id' => '9843a2c1bd3f4d298a6f2f5e9ab123877',
-                'name' => 'testingit',
-                'key' => '7b839c4d9e234f9ab8d4f21c68d0ef94',
-                'secret' => '1fc27c9baf954f208dfe9eae21373b8d',
+                'id' =>'9843a2c1bd3f4d298a6f2f5e9ab123877',
+                'name' =>'testingit',
+                'key' =>'7b839c4d9e234f9ab8d4f21c68d0ef94',
+                'secret' =>'1fc27c9baf954f208dfe9eae21373b8d',
                 'path' => '',
                 'capacity' => null,
                 'enable_client_messages' => true,
