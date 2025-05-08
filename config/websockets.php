@@ -55,7 +55,7 @@
                 'secret' => '1fc27c9baf954f208dfe9eae21373b8d',
                 'path' => '',
                 'capacity' => null,
-                'enable_client_messages' => false,
+                'enable_client_messages' => true,
                 'enable_statistics' => true,
             ],
         ],
