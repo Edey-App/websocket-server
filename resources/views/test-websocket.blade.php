@@ -81,7 +81,7 @@
             wssPort: {{ env('PUSHER_PORT') }},
             wsPath: null,
             disableStats: true,
-            // authEndpoint: '/broadcasting/auth',
+            authEndpoint: '/broadcasting/auth',
             forceTLS: false,
             enabledTransports: ['ws', 'wss'],
             cluster: '{{ env('PUSHER_APP_CLUSTER') }}'
